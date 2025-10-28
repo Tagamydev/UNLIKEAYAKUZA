@@ -1,0 +1,144 @@
+[gd_scene load_steps=14 format=3 uid="uid://dfysvhl71wb7s"]
+
+[ext_resource type="Shader" uid="uid://ccvieruh5rbxr" path="res://Shaders/Water.gdshader" id="2_nhkr4"]
+[ext_resource type="Script" uid="uid://bv4bxitjf1n1m" path="res://Scripts/player.gd" id="3_nhkr4"]
+[ext_resource type="PackedScene" uid="uid://ctm51847fmtj0" path="res://Prefabs/island.tscn" id="4_q68mp"]
+[ext_resource type="PackedScene" uid="uid://o8clx8ssohi8" path="res://Prefabs/player.tscn" id="5_qxria"]
+[ext_resource type="PackedScene" uid="uid://bd8tkowwdcctb" path="res://Scenes/GUI/player_viewer.tscn" id="5_y4jh7"]
+[ext_resource type="PackedScene" uid="uid://yvf5obhljbwx" path="res://Prefabs/portal.tscn" id="7_q68mp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tr2i4"]
+sky_top_color = Color(0, 0.447383, 0.823598, 1)
+sky_horizon_color = Color(0.331964, 0.727093, 0.868183, 1)
+ground_bottom_color = Color(0.0156352, 0.24045, 0.49688, 1)
+ground_horizon_color = Color(4.23551e-06, 0.733473, 0.96103, 1)
+energy_multiplier = 2.5
+
+[sub_resource type="Sky" id="Sky_nhkr4"]
+sky_material = SubResource("ProceduralSkyMaterial_tr2i4")
+
+[sub_resource type="Environment" id="Environment_7rqgy"]
+background_mode = 2
+sky = SubResource("Sky_nhkr4")
+tonemap_mode = 2
+ssao_enabled = true
+ssao_intensity = 10.0
+glow_enabled = true
+glow_intensity = 3.0
+fog_light_color = Color(0.325179, 0.761742, 0.994389, 1)
+fog_density = 0.0001
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_emission = Color(0.243925, 0.810519, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tr2i4"]
+render_priority = 0
+shader = ExtResource("2_nhkr4")
+shader_parameter/WATER_COL = Color(0.000315208, 0.184125, 0.633705, 1)
+shader_parameter/WATER2_COL = Color(0.138439, 0.457015, 1, 1)
+shader_parameter/FOAM_COL = Color(0.8125, 0.9609, 0.9648, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(500, 500)
+shader_parameter/wave_speed = 2.0
+shader_parameter/wave_amplitude = 0.5
+shader_parameter/wave_frequency = 1.5
+shader_parameter/time_offset = 0.0
+shader_parameter/water_size = Vector2(128, 128)
+shader_parameter/water_transparency = 0.8
+shader_parameter/water_depth_factor = 0.1
+shader_parameter/foam_width = 0.5
+shader_parameter/foam_edge_softness = 0.05
+shader_parameter/foam_smoothness = 0.03
+shader_parameter/foam_distortion_speed = 0.5
+shader_parameter/foam_distortion_amount = 0.1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nhkr4"]
+material = SubResource("ShaderMaterial_tr2i4")
+size = Vector2(1000, 1000)
+subdivide_width = 32
+subdivide_depth = 32
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxria"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tr2i4"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7rqgy")
+
+[node name="Spectator" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.482679, 2.04019, 4.02976)
+script = ExtResource("3_nhkr4")
+
+[node name="Camera3D" type="Camera3D" parent="Spectator"]
+transform = Transform3D(1, 5.73695e-07, -2.6077e-07, 7.45058e-09, 1, -1.30385e-08, 7.45058e-09, -3.81842e-08, 1, 0, 0, 0)
+
+[node name="Sea" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_nhkr4")
+
+[node name="Island" parent="." instance=ExtResource("4_q68mp")]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("5_qxria")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.529828, 0)
+
+[node name="Egg" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03448, 0)
+visible = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Egg"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_qxria")
+mesh = SubResource("BoxMesh_tr2i4")
+skeleton = NodePath("../..")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuButton" type="MenuButton" parent="Control"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 25.0
+offset_right = 173.0
+offset_bottom = 56.0
+text = "PLAYERS"
+flat = false
+item_count = 4
+popup/item_0/text = "player1"
+popup/item_0/id = 0
+popup/item_1/text = "player2"
+popup/item_1/id = 1
+popup/item_2/text = "player3"
+popup/item_2/id = 2
+popup/item_3/text = "1"
+popup/item_3/id = 3
+
+[node name="PlayerViewer" parent="Control" instance=ExtResource("5_y4jh7")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_top = -380.0
+offset_right = 0.0
+offset_bottom = -380.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="GameManager" type="Node3D" parent="."]
+
+[node name="Islands" type="Node3D" parent="GameManager"]
+
+[node name="Players" type="Node3D" parent="GameManager"]
+
+[node name="Portal" parent="." instance=ExtResource("7_q68mp")]

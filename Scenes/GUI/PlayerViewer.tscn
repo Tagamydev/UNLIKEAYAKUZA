@@ -1,0 +1,399 @@
+[gd_scene load_steps=15 format=3 uid="uid://bd8tkowwdcctb"]
+
+[ext_resource type="Script" uid="uid://bg2yfrc46dtgb" path="res://Scripts/player_viewer.gd" id="1_6kpgy"]
+[ext_resource type="Texture2D" uid="uid://djgxgav3337hq" path="res://Assets/Textures/character02.png" id="1_07gjh"]
+[ext_resource type="Texture2D" uid="uid://bo4k7imc4rs2x" path="res://Assets/Textures/linemate.png" id="2_07gjh"]
+[ext_resource type="Texture2D" uid="uid://bk667o6alvkwl" path="res://Assets/Textures/frame.png" id="2_atxbm"]
+[ext_resource type="Script" uid="uid://wxljvob3blly" path="res://Scripts/close_character_menu.gd" id="2_cfiqj"]
+[ext_resource type="Texture2D" uid="uid://ceyxb04jibwge" path="res://Assets/Textures/mendiane.png" id="3_atxbm"]
+[ext_resource type="Texture2D" uid="uid://oae4k3y8qlx0" path="res://Assets/Textures/phiras.png" id="4_2vgnp"]
+[ext_resource type="Script" uid="uid://77dukly5nkx0" path="res://Scripts/item.gd" id="4_87dgi"]
+[ext_resource type="Texture2D" uid="uid://gfx63hwkysgb" path="res://Assets/Textures/characterPhantom.png" id="4_tqu2s"]
+[ext_resource type="Texture2D" uid="uid://bhraql728jy3i" path="res://Assets/Textures/sibur.png" id="5_mqb80"]
+[ext_resource type="Texture2D" uid="uid://bnbofq0xifvv2" path="res://Assets/Textures/booo.png" id="6_qgks1"]
+[ext_resource type="Texture2D" uid="uid://dcqoynkiw0a26" path="res://Assets/Textures/tystame.png" id="6_xmh5m"]
+[ext_resource type="Texture2D" uid="uid://kfu58l8xw3pt" path="res://Assets/Textures/deraumere.png" id="7_l5rfd"]
+[ext_resource type="Texture2D" uid="uid://n3a5v1hcfl50" path="res://Assets/Textures/food.png" id="8_03fxt"]
+
+[node name="PlayerViewer" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_6kpgy")
+
+[node name="PlayerPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -379.5
+offset_right = 407.0
+offset_bottom = -0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PlayerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="PlayerPanel/HBoxContainer4"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerPanel/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="HSeparator" parent="PlayerPanel/HBoxContainer4/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer3"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PlayerName" type="RichTextLabel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer3/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Player start"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "X"
+script = ExtResource("2_cfiqj")
+
+[node name="HSeparator" type="HSeparator" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 11.505)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 126)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer/PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.0
+offset_top = -25.0
+offset_right = 183.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer/PanelContainer/Panel/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+alignment = 1
+
+[node name="LevelPlayer" type="RichTextLabel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer/PanelContainer/Panel/HBoxContainer2/VBoxContainer2"]
+clip_contents = false
+custom_minimum_size = Vector2(88.6, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "TEAM 1"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TeamPlayer" type="RichTextLabel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer/PanelContainer/Panel/HBoxContainer2/VBoxContainer2"]
+clip_contents = false
+custom_minimum_size = Vector2(88.6, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "TEAM 1"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.149
+anchor_right = 0.845
+anchor_bottom = 1.0
+offset_left = 0.0310001
+offset_right = 0.0549927
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.155497, 0.405951, 0.617633, 1)
+
+[node name="ProfilePicture" type="TextureRect" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer/Control"]
+visible = false
+custom_minimum_size = Vector2(48.57, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_07gjh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Phantom" type="TextureRect" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer/Control"]
+custom_minimum_size = Vector2(48.57, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_tqu2s")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Border" type="TextureRect" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer/Control"]
+custom_minimum_size = Vector2(49, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = -28.0
+offset_right = -27.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_atxbm")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Phamtom2" type="TextureRect" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer/Control"]
+custom_minimum_size = Vector2(48.57, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 129.0
+offset_top = -61.5
+offset_right = 129.0
+offset_bottom = -61.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+texture = ExtResource("6_qgks1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HSeparator3" type="HSeparator" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+columns = 3
+
+[node name="Linemate" type="PanelContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+script = ExtResource("4_87dgi")
+
+[node name="Panel" type="Panel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Linemate"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Linemate"]
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
+layout_mode = 2
+texture = ExtResource("2_07gjh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Linemate"]
+layout_mode = 2
+text = "255"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Mendiane" type="PanelContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+script = ExtResource("4_87dgi")
+
+[node name="Panel" type="Panel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Mendiane"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Mendiane"]
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
+layout_mode = 2
+texture = ExtResource("3_atxbm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Mendiane"]
+layout_mode = 2
+text = "255"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Phiras" type="PanelContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+script = ExtResource("4_87dgi")
+
+[node name="Panel" type="Panel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Phiras"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Phiras"]
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
+layout_mode = 2
+texture = ExtResource("4_2vgnp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Phiras"]
+layout_mode = 2
+text = "255"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Sibur" type="PanelContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+script = ExtResource("4_87dgi")
+
+[node name="Panel" type="Panel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Sibur"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Sibur"]
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
+layout_mode = 2
+texture = ExtResource("5_mqb80")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Sibur"]
+layout_mode = 2
+text = "255"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Tystame" type="PanelContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+script = ExtResource("4_87dgi")
+
+[node name="Panel" type="Panel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Tystame"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Tystame"]
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
+layout_mode = 2
+texture = ExtResource("6_xmh5m")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Tystame"]
+layout_mode = 2
+text = "255"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Deraumere" type="PanelContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+script = ExtResource("4_87dgi")
+
+[node name="Panel" type="Panel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Deraumere"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Deraumere"]
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
+layout_mode = 2
+texture = ExtResource("7_l5rfd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/GridContainer/Deraumere"]
+layout_mode = 2
+text = "255"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Food" type="PanelContainer" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+script = ExtResource("4_87dgi")
+
+[node name="Panel5" type="Panel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Food"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Food"]
+modulate = Color(0.258824, 0.258824, 0.258824, 1)
+layout_mode = 2
+texture = ExtResource("8_03fxt")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer/Food"]
+layout_mode = 2
+text = "255"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="HSeparator2" type="HSeparator" parent="PlayerPanel/HBoxContainer4/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="PlayerPanel/HBoxContainer4"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[connection signal="pressed" from="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer3/Button" to="PlayerPanel/HBoxContainer4/VBoxContainer/VBoxContainer/HBoxContainer3/Button" method="_on_pressed"]
