@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Zappy_GC"
-run/main_scene="uid://puy6ggl1qfn2"
+run/main_scene="uid://c74y0d66u62ni"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -76,3 +76,4 @@ Ctrl={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
