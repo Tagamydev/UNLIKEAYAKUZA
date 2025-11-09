@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://b0x7qefs0ncp4"]
 
-[ext_resource type="Script" uid="uid://mk3pnh5mkcs6" path="res://Scripts/egg.gd" id="1_f74i1"]
+[ext_resource type="Script" uid="uid://mk3pnh5mkcs6" path="res://Scripts/Deprecated/egg.deprecated.gd" id="1_f74i1"]
 [ext_resource type="ArrayMesh" uid="uid://dhpsyfsnb5dq8" path="res://Assets/Models/Egg.obj" id="1_wrvtk"]
 [ext_resource type="ArrayMesh" uid="uid://chp7sch0j1cq4" path="res://Assets/Models/Egg_part1.obj" id="3_c2hyd"]
 [ext_resource type="ArrayMesh" uid="uid://cp6f7aoqmnymq" path="res://Assets/Models/Egg_part2.obj" id="4_dftlv"]

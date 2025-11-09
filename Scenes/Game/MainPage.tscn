@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6mekuapdk1jd"]
+
+[ext_resource type="Script" uid="uid://bpcow61anr0ok" path="res://Scripts/Global/OptionSelector.gd" id="1_ls0bi"]
+
+[node name="MainPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ls0bi")
+options = Array[String](["properties_tab", "employees_tab", "debts_tab", "board_room_tab", "open_for_business_tab"])
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Properties" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Properties"
+
+[node name="Employees" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Employees"
+
+[node name="Debts" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Debts"
+
+[node name="BoardRoom" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Board Room"
+
+[node name="OpenForBusiness" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Open for Business"

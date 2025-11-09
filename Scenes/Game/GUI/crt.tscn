@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dswt73or2fiq6"]
 
 [ext_resource type="Shader" uid="uid://dh2g3nc716kw6" path="res://Shaders/CRT.gdshader" id="1_asr0g"]
-[ext_resource type="Script" uid="uid://qdbm0lvrs557" path="res://Scripts/crt.gd" id="2_7yt8b"]
+[ext_resource type="Script" uid="uid://qdbm0lvrs557" path="res://Scripts/Deprecated/crt.deprecated.gd" id="2_7yt8b"]
 [ext_resource type="AudioStream" uid="uid://b8cluk5fkfk8d" path="res://Assets/Music/zappyGameMusic1.mp3" id="3_47owe"]
 [ext_resource type="AudioStream" uid="uid://keos2jie1c5e" path="res://Assets/Music/zappyGameMusic2.mp3" id="4_mgl1y"]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=30 format=3 uid="uid://ctm51847fmtj0"]
 
-[ext_resource type="Script" uid="uid://bqyrd6ra7rwq8" path="res://Scripts/Island.gd" id="1_tqsrf"]
-[ext_resource type="Script" uid="uid://cu52dooi6ed2i" path="res://Scripts/SelectIsland.gd" id="3_4ufhe"]
-[ext_resource type="Script" uid="uid://piah48xvyg4h" path="res://Scripts/terrain.gd" id="3_gby2t"]
+[ext_resource type="Script" uid="uid://bqyrd6ra7rwq8" path="res://Scripts/Deprecated/Island.deprecated.gd" id="1_tqsrf"]
+[ext_resource type="Script" uid="uid://cu52dooi6ed2i" path="res://Scripts/Deprecated/SelectIsland.deprecated.gd" id="3_4ufhe"]
+[ext_resource type="Script" uid="uid://piah48xvyg4h" path="res://Scripts/Deprecated/terrain.deprecated.gd" id="3_gby2t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tr2i4"]
 albedo_color = Color(0.552645, 0.814432, 0, 1)

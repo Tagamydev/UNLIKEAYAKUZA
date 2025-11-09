@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://yvf5obhljbwx"]
 
 [ext_resource type="Texture2D" uid="uid://douaxeal6jn8s" path="res://Assets/Textures/magicCircle3.png" id="1_rqanf"]
-[ext_resource type="Script" uid="uid://ctyovpfgw30ka" path="res://Scripts/portal_player.gd" id="1_u2es8"]
+[ext_resource type="Script" uid="uid://ctyovpfgw30ka" path="res://Scripts/Deprecated/portal_player.deprecated.gd" id="1_u2es8"]
 [ext_resource type="Texture2D" uid="uid://byp5d7kot2bx0" path="res://Assets/Textures/magicCircle2.png" id="2_u2es8"]
 [ext_resource type="Texture2D" uid="uid://do1ulr5c25qn3" path="res://Assets/Textures/magicCircle1.png" id="3_18r6m"]
 
